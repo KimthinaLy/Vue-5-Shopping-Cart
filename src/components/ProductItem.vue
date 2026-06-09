@@ -3,7 +3,7 @@ import { type Product } from '@/types/product'
 import { useCartStore } from '@/stores/cartStore'
 
 const cartStore = useCartStore();
-const propes = defineProps<{
+const props = defineProps<{
     product: Product
 }>()
 </script>

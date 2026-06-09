@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { type Cart } from '@/types/cart'
+import { useProductStore } from '@/stores/productStore'
 
 export const useCartStore = defineStore('cart', () => {
   const cartItems = ref<Cart[]>([
@@ -34,11 +35,21 @@ export const useCartStore = defineStore('cart', () => {
       }
     }
   }
+
+  function getCartItems() {
+    const productStore = useProductStore()
+    return cartItems.value.flatMap((item) => {
+      const product = productStore.getProductById(item.productId)
+      return product ? [{ ...item, ...product }] : []
+    })
+  }
+
   return {
     cartItems,
     saveToCart,
     removeFromCart,
     clearCart,
     decreaseQuantity,
+    getCartItems,
   }
 })
