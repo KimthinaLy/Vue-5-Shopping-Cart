@@ -44,9 +44,18 @@ export const useCartStore = defineStore('cart', () => {
     })
   }
 
+  function getTotalPrice() {
+    const productStore = useProductStore()
+    return cartItems.value.reduce((total, item) => {
+      const product = productStore.getProductById(item.productId)
+      return total + (product ? product.price * item.quantity : 0)
+    }, 0)
+  }
+
   return {
     cartItems,
     saveToCart,
+    getTotalPrice,
     removeFromCart,
     clearCart,
     decreaseQuantity,
