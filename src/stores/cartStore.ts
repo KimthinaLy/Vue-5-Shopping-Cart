@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { type Cart } from '@/types/cart'
 import { useProductStore } from '@/stores/productStore'
 
+const productStore = useProductStore()
 export const useCartStore = defineStore('cart', () => {
   const cartItems = ref<Cart[]>([
     { productId: 1, quantity: 2 },
@@ -45,7 +46,6 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   function getTotalPrice() {
-    const productStore = useProductStore()
     return cartItems.value.reduce((total, item) => {
       const product = productStore.getProductById(item.productId)
       return total + (product ? product.price * item.quantity : 0)

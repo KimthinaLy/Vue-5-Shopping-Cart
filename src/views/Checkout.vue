@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { useCartStore } from '@/stores/cartStore'
+import { useRouter } from 'vue-router';
 
 const cartStore = useCartStore();
+const router = useRouter();
+
+function checkout() {
+    cartStore.clearCart()
+    router.push({ name: 'success' })
+}
 
 </script>
 <template>
@@ -15,6 +22,6 @@ const cartStore = useCartStore();
     </div>
     <div>
         <div>Total Amount: {{ cartStore.getTotalPrice() }}</div>
-        <button @click="cartStore.clearCart()">Check Out</button>
+        <button @click="checkout()">Check Out</button>
     </div>
 </template>

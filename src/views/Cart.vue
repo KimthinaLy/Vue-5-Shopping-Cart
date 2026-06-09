@@ -15,5 +15,6 @@ const cartStore = useCartStore();
         <button @click="cartStore.saveToCart(item.productId)">+</button>
         <button @click="cartStore.removeFromCart(item.productId)">Remove</button>
     </div>
+    <RouterLink :to="{ name: 'checkout' }">Proceed to Checkout</RouterLink>
 
 </template>

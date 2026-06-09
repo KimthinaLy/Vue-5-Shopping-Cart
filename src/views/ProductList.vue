@@ -5,6 +5,8 @@ import ProductItem from '../components/ProductItem.vue';
 const productsStore = useProductStore();
 </script>
 <template>
+    <h1>Product List</h1>
+    <RouterLink :to="{ name: 'cart' }">View Details</RouterLink>
     <div v-for="product in productsStore.products" :key="product.id">
         <ProductItem :product="product" />
     </div>
