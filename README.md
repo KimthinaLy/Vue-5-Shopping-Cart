@@ -1,42 +1,47 @@
-# shopping-cart
+# Daily Shopping
+A shopping cart app built with Vue 3 and TypeScript — created to practice Pinia state management and Vue Router by building something real.
 
-This template should help get you started developing with Vue 3 in Vite.
+---
 
-## Recommended IDE Setup
+## About
+Daily Shopping lets you browse products, manage a cart, and complete a checkout flow across multiple pages.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+**Why I built this:** Part of a self-directed Vue learning roadmap. This project covers multi-store Pinia architecture, cross-store communication, computed getters, programmatic navigation with `useRouter()`, and quantity management in a practical context.
 
-## Recommended Browser Setup
+---
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Tech Stack
 
-## Type Support for `.vue` Imports in TS
+| Tool | Version |
+|------|---------|
+| Vue | 3 |
+| TypeScript | 5 |
+| Vite | 6 |
+| Pinia | 2 |
+| Vue Router | 4 |
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## Setup
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+**Requirements:**
+- Node.js 18+
+- VS Code with [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) extension
 
-## Project Setup
-
-```sh
+**Install and run:**
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+---
 
-```sh
-npm run build
-```
+## Features
+- Browse a product catalog
+- Add products to cart
+- Increase or decrease item quantity
+- Remove individual items from cart
+- View cart total price (computed, cached)
+- Proceed to checkout with full order summary
+- Confirm order — clears cart and redirects to success page
+- Continue shopping from success page
