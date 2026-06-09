@@ -13,7 +13,7 @@ function checkout() {
 </script>
 <template>
     <h1>Cart Summary</h1>
-    <div v-for="item in cartStore.getCartItems()" :key="item.productId">
+    <div v-for="item in cartStore.getCartItems" :key="item.productId">
         <p>Product ID: {{ item.productId }}</p>
         <p>Quantity: {{ item.quantity }}</p>
         <p>Name: {{ item.name }}</p>
@@ -21,7 +21,7 @@ function checkout() {
         <p>Total: {{ item.price * item.quantity }}</p>
     </div>
     <div>
-        <div>Total Amount: {{ cartStore.getTotalPrice() }}</div>
+        <div>Total Amount: {{ cartStore.getTotalPrice }}</div>
         <button @click="checkout()">Check Out</button>
     </div>
 </template>
