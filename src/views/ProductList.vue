@@ -6,7 +6,7 @@ const productsStore = useProductStore();
 </script>
 <template>
     <h1>Product List</h1>
-    <RouterLink :to="{ name: 'cart' }">View Details</RouterLink>
+    <RouterLink :to="{ name: 'cart' }">Cart</RouterLink>
     <div v-for="product in productsStore.products" :key="product.id">
         <ProductItem :product="product" />
     </div>
